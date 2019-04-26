@@ -15,11 +15,11 @@ class Item extends Component {
                 </View>
                 
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={this.props.onClickDelete}>
+                    <TouchableOpacity onPress={() => this.props.onClickEdit(this.props.index)}>
                         <Icon name="edit" size={32} style={{ marginRight: 10, paddingTop: 4, alignItems: 'center' }} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={this.props.onClickEdit}>
+                    <TouchableOpacity onPress={() => {this.props.onClickDelete(this.props.index);}}>
                         <Icon name="trash" size={32} style={{ marginRight: 10, alignItems: 'center' }} />
                     </TouchableOpacity>
                 </View>
