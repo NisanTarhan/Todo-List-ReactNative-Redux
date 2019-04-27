@@ -98,34 +98,33 @@ export default class App extends Component {
   }
 
   //Update Todo
+
   editItem = (index) => {
-    let array = [...this.state.items];
-    console.log(array[index]);
-    let setTitleToTextInput = array[index].title
-    let setDescriptionToTextInput = array[index].description;
-    this.setState({title: setTitleToTextInput, description: setDescriptionToTextInput})
-    
-    // let {newTitle, newDescription} = 
+    this.setState({
+      title: this.state.items[index].title,
+      description: this.state.items[index].description
+    })
   }
 
-  saveItem = (title,description) => {
-    this.setState({title})
+  saveItem = async (index) => {
+    let array = [...this.state.items];
+    array[index] = {title: this.state.title, description: this.state.description};
+    this.saveList(array);
+    this.setState({items: array});
+
   }
-  // setTextInput = (text) => {
-  //   this.setState({})
+
+  // deleteUserId = async () => {
+  //   try {
+  //     await AsyncStorage.removeItem('userId');
+  //   } catch (error) {
+  //     // Error retrieving data
+  //     console.log(error.message);
+  //   }
   // }
 
-  deleteUserId = async () => {
-    try {
-      await AsyncStorage.removeItem('userId');
-    } catch (error) {
-      // Error retrieving data
-      console.log(error.message);
-    }
-  }
-
   renderItem = ({ item }) => (
-    <Item index={this.state.items.indexOf(item)} title={item.title} description={item.description} onClickDelete={this.deleteItem} onClickEdit={this.editItem} />
+    <Item index={this.state.items.indexOf(item)} title={item.title} description={item.description} onClickDelete={this.deleteItem} onClickEdit={this.editItem} onClickSave={this.saveItem} />
   );
 
   render() {
@@ -142,7 +141,6 @@ export default class App extends Component {
         <View style={{ height: height * 0.17, backgroundColor: '#34495e', alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
           <MyButton onClick={this.addItem} text={'ADD'}></MyButton>
           <MyButton onClick={this.deleteAllItem} text={'DELETE ALL'}></MyButton>
-          <Button onPress={this.saveItem} title="Save"/>
         </View>
 
         <View style={{ borderBottomColor: '#e74c3c', borderBottomWidth: 1 }}></View>

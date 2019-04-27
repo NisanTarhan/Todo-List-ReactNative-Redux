@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, Dimensions, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Dimensions, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const { height, width } = Dimensions.get('window');
 
@@ -19,9 +19,14 @@ class Item extends Component {
                         <Icon name="edit" size={32} style={{ marginRight: 10, paddingTop: 4, alignItems: 'center' }} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => {this.props.onClickDelete(this.props.index);}}>
+                    <TouchableOpacity onPress={() => this.props.onClickDelete(this.props.index)}>
                         <Icon name="trash" size={32} style={{ marginRight: 10, alignItems: 'center' }} />
                     </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.props.onClickSave(this.props.index)}>
+                        <Icon name="check" size={32} style={{ marginRight: 10, alignItems: 'center' }} />
+                    </TouchableOpacity>
+                    
                 </View>
 
             </View>
