@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
-import { StyleSheet,Text, TextInput, View, TouchableOpacity, Dimensions, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { StyleSheet, Text, TextInput, View, Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 const Title = (props) => {
-    return(
-        <View style={{ paddingTop: 5, height: height * 0.12, backgroundColor: '#34495e', alignItems: 'center' }}>
-          <Text style={{ fontSize: 15, color: '#e74c3c' }}>Title</Text>
-          <TextInput value={props.value} onChangeText={props.onChangeText} maxLength={props.maxLength} placeholder={props.placeholder} style={{ backgroundColor: 'white', borderColor: 'black', borderWidth: 1, borderRadius: 5, marginTop: 5, paddingRight: 7, height: 35, width: width * 0.8 }}></TextInput>
-        </View>
-    );
+  return (
+    <View style={styles.titleView}>
+      <Text style={styles.titleText}>Title</Text>
+      <TextInput value={props.value} onChangeText={props.onChangeText} maxLength={props.maxLength} placeholder={props.placeholder} style={styles.titleTextInput}></TextInput>
+    </View>
+  );
 }
 
 export default Title;
+
+const styles = StyleSheet.create({
+  titleView: {
+    paddingTop: 5,
+    height: height * 0.15,
+    backgroundColor: '#5f27cd',
+    alignItems: 'center'
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#ff9f43'
+  },
+  titleTextInput: {
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    marginTop: 5,
+    paddingRight: 7,
+    height: 50,
+    width: width * 0.8
+  }
+});
