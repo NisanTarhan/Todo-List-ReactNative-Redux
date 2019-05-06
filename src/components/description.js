@@ -16,7 +16,6 @@ export default Description;
 const styles = StyleSheet.create({
   descriptionView: {
     height: height * 0.30,
-    backgroundColor: '#5f27cd',
     alignItems: 'center'
   },
   descriptionText: {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 const MyButton = (props) => {
@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 8,
         borderColor: 'black',
-        borderWidth: 1
+        borderWidth: 1,
+        shadowColor: "#000",
+        shadowOffset: { width: 10, height: 10 },
+        shadowOpacity: 1,
+        shadowRadius: 16.00,
+        elevation: 12,
     },
     buttonText: {
         padding: 5,

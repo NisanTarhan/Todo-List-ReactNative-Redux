@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
   titleView: {
     paddingTop: 5,
     height: height * 0.15,
-    backgroundColor: '#5f27cd',
     alignItems: 'center'
   },
   titleText: {
