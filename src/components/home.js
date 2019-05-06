@@ -29,9 +29,6 @@ class Todos extends Component {
         console.warn(error)
       }
     }
-    if (props.isDeleteAll) {
-
-    }
   }
 
   // Delete All TodoList's Items
