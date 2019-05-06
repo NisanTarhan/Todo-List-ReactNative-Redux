@@ -39,8 +39,7 @@ class Todos extends Component {
       [
         {
           text: 'OK', onPress: () => {
-            this.props.deleteAllTodoList([])
-            // this.setState({ title: '', description: ''});
+            this.props.deleteAllTodoList([]);
           }
         },
         { text: 'Cancel', style: 'cancel' }
